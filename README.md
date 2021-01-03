@@ -80,16 +80,49 @@ $ ng generate service shared/User --skip-tests=true
 
 - [ ] Edit `user-service.ts` 
 
-* change the constructor with along with the appropriate import
+* change the constructor along with its appropriate import
 
 ```typescript
   constructor(private kinveyUserService: KinveyUserService) { }
-``
+```
 
 ```typescript
 import { UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 ```
 
+* Add the below methods along with its appropriate import
+
+```typescript
+  register(user: User) {
+    return this.kinveyUserService.signup({ username: user.email, password: user.password })
+        .catch(this.handleErrors);
+  }
+
+  login(user: User) {
+      return this.kinveyUserService.login(user.email, user.password)
+          .catch(this.handleErrors);
+  }
+
+  logout() {
+      return this.kinveyUserService.logout()
+          .catch(this.handleErrors);
+  }
+
+  resetPassword(email) {
+      return this.kinveyUserService.resetPassword(email)
+          .catch(this.handleErrors);
+  }
+
+  handleErrors(error: Kinvey.Errors.BaseError) {
+      console.error(error.message);
+      return Promise.reject(error.message);
+  }
+```
+
+```typescript
+import * as Kinvey from "kinvey-nativescript-sdk";
+import { User } from "./user";
+```
 
 - [ ] Edit `app.module.ts` 
 
