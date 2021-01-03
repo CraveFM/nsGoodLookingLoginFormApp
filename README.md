@@ -9,7 +9,31 @@ Example taken from [:bookmark:`nativescript.rocks`](https://plugins.nativescript
 ## :o: Create a project by using this template
 
 ```
+$ ns create nsGoodLookingLoginFormApp --template https://github.com/CraveFM/nsGoodLookingLoginFormApp.git
+```
+
+## :bookmark: Create a project from Scratch
+
+```
 $ ns create nsGoodLookingLoginFormApp --template @nativescript/template-blank-ng
+```
+
+:gear: Reverse Engineering from [PlayGround](https://play.nativescript.org/?template=play-ng&id=Hqp5UQ&v=6155)'s Example
+
+- [ ] Create a `NSPlayground` directory 
+
+- [ ] Download the old {N} 6.0 project from [Playground]((https://play.nativescript.org/?template=play-ng&id=Hqp5UQ&v=6155))
+
+- [ ] Move the `NSPlayground.zip` file to the `NSPlayground` directory in the project
+
+    `mv ~/Downloads/NSPlayground.zip NSPlayground`
+
+- [ ] Assets
+
+* copy `assets` folder to the `src` directory
+
+```
+$ cp -r NSPlayground/app/assets src
 ```
 
 ## :a: Login Form Component
