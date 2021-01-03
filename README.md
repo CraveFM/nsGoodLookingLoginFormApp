@@ -56,65 +56,81 @@ $ npm install @schematics/angular @nativescript/schematics tslint --save-dev
 $ npm install kinvey-nativescript-sdk --save
 ```
 
-:pushpin: Login Module
+:pushpin: User Service
 
-- [ ] Generate the module
+- [ ] Generate the `User` Class Model
 
 ```
-$ ng generate module login  --routing
+$ % ng generate class shared/UserModel --skip-tests=true
 ```
 
-- [ ] Edit `app-routing.module.ts` and replace the entire `routes` JSON array bypassing the `Home` Module
+- [ ] Edit `user.ts` and add the following instance variables (fields) to the `User` class
 
 ```typescript
-const routes: Routes = [
-    { path: "", redirectTo: "/appleCard", pathMatch: "full" },
-    { path: "login", loadChildren: () => import("./login/login.module").then(m => m.LoginModule) }, // lazy loaded module
-];
+    email: string;
+    password: string;
+    confirmPassword: string;
 ```
 
-- [ ] Generate the component
+- [ ] Generate the `User` service
 
 ```
-$ ng generate component login/login  --skip-import --skipTests=true
+$ ng generate service shared/User --skip-tests=true
 ```
 
-* do some clean up
+- [ ] Edit `user-service.ts` 
 
+* change the constructor with along with the appropriate import
+
+```typescript
+  constructor(private kinveyUserService: KinveyUserService) { }
+``
+
+```typesccript
+import { UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 ```
-$ find src -name "*.tns.*" -exec rm {} \;  
+
+
+- [ ] Edit `app.module.ts` 
+
+* add the below code to the `imports` property 
+
+```typescript
+        KinveyModule.init({
+            appKey: "kid_SyY8LYO8M",
+            appSecret: "09282985d7c540f7b076a9c7fd884c77"
+        })
 ```
 
-```
-$ find src -name "*.spec.ts" -exec rm {} \;   
-```
-
-- [ ] Attach the component to the Module by editing the `login.module.ts`
-
-* add the `LoginComponent` to the **declarations** `Array` property 
-
-* along with adding the **schemas** `Array` property give it the `NO_ERRORS_SCHEMA` value
+like this
 
 ```typescript
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
-  imports: [
-    CommonModule,
-    LoginRoutingModule
-  ],
-  schemas: [
-    NO_ERRORS_SCHEMA
-  ]
+    bootstrap: [
+        AppComponent
+    ],
+    imports: [
+        NativeScriptModule,
+        AppRoutingModule,
+        KinveyModule.init({
+            appKey: "kid_SyY8LYO8M",
+            appSecret: "09282985d7c540f7b076a9c7fd884c77"
+        })
+    ],
+    declarations: [
+        AppComponent
+    ],
+    schemas: [
+        NO_ERRORS_SCHEMA
+    ]
 })
-export class LoginModule { }
+export class AppModule { }
 ```
 
-- [ ] Edit the `login-routing.module.ts` and add a default component value to the routing
+* add the `KinveyModule` import
 
 ```typescript
-const routes: Routes = [
-  { path: "", component: LoginComponent}
-];
+import { KinveyModule } from "kinvey-nativescript-sdk/lib/angular";
 ```
+
+
