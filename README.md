@@ -86,7 +86,7 @@ $ ng generate service shared/User --skip-tests=true
   constructor(private kinveyUserService: KinveyUserService) { }
 ``
 
-```typesccript
+```typescript
 import { UserService as KinveyUserService } from "kinvey-nativescript-sdk/lib/angular";
 ```
 
@@ -149,7 +149,7 @@ import { UserService } from "./shared/user.service";
 
 - [ ] Final edit
 
-```typecript
+```typescript
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "@nativescript/angular";
 
