@@ -38,10 +38,10 @@ $ unzip NSPlayground/NSPlayground.zip -d NSPlayground
 
 - [ ] Assets
 
-* copy `assets` folder to the `src` directory
+* copy `images` folder to the `src/assets` directory
 
 ```
-$ cp -r NSPlayground/app/assets src
+$ cp -r NSPlayground/app/images src/assets
 ```
 
 ## :a: Login Form Component
