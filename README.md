@@ -216,3 +216,13 @@ import { UserService } from "./shared/user.service";
 })
 export class AppModule { }
 ```
+
+## :o: Customization
+
+:iphone: Android
+
+Open up the manifest file `AndroidManifest.xml` (in `App_Resource/Android/src/main`) and add a new `<uses-permission>` tag in the `manifest` main tag:
+
+```xml
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
