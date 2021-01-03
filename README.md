@@ -26,11 +26,15 @@ $ ns create nsGoodLookingLoginFormApp --template @nativescript/template-blank-ng
 
 - [ ] Move the `NSPlayground.zip` file to the `NSPlayground` directory in the project
 
-    `$ mv ~/Downloads/NSPlayground.zip NSPlayground`
+```
+$ mv ~/Downloads/NSPlayground.zip NSPlayground
+```
 
 - [ ] Extract the {N} 6.0 project files in the `NSPlayground` directory
 
-    `$ unzip NSPlayground/NSPlayground.zip -d NSPlayground`
+```
+$ unzip NSPlayground/NSPlayground.zip -d NSPlayground
+```
 
 - [ ] Assets
 
