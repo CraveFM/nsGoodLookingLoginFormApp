@@ -44,12 +44,16 @@ $ unzip NSPlayground/NSPlayground.zip -d NSPlayground
 $ cp -r NSPlayground/app/images src/assets
 ```
 
-## :a: Login Form Component
+## :a: Login Service Classes
 
 :gear: Angular CLI schematics generation tools
 
 ```
 $ npm install @schematics/angular @nativescript/schematics tslint --save-dev 
+```
+
+```
+$ npm install kinvey-nativescript-sdk --save
 ```
 
 :pushpin: Login Module
