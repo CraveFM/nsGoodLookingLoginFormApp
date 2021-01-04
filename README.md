@@ -452,6 +452,27 @@ $ find src -name "*.spec.ts" -exec rm {} \;
 </FlexboxLayout>
 ```
 
+## :ab: Hooking up the Login component
+
+- [ ] Edit `app-routing.module.ts` by replacing the JSON object in `const routes: Routes` 
+
+```typescript
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+```
+
+by 
+
+```typescript
+    { path: "", redirectTo: "/login", pathMatch: "full" },
+    { path: "login", component: LoginComponent },
+```
+
+along with the appropriate `import`
+
+```typescript
+import { LoginComponent } from "./login/login.component";
+```
+
 ## :o: Customization
 
 :iphone: Android
