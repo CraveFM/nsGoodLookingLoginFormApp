@@ -217,6 +217,26 @@ import { UserService } from "./shared/user.service";
 export class AppModule { }
 ```
 
+
+## :b: Login Component
+
+- [ ] Generate the component
+
+```
+$ ng generate component login  --skip-import --skipTests=true
+```
+
+* do some clean up
+
+```
+$ find src -name "*.tns.*" -exec rm {} \;  
+```
+
+```
+$ find src -name "*.spec.ts" -exec rm {} \;   
+```
+
+
 ## :o: Customization
 
 :iphone: Android
