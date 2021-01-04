@@ -248,7 +248,7 @@ $ find src -name "*.spec.ts" -exec rm {} \;
 
 - [ ] Constructor
 
-```
+```typescript
     constructor(private page: Page, private userService: UserService, private routerExtensions: RouterExtensions) {
         this.page.actionBarHidden = true;
         this.user = new User();
