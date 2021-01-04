@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 
 import { KinveyModule } from "kinvey-nativescript-sdk/lib/angular";
 import { UserService } from "./shared/user.service";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
     bootstrap: [
@@ -20,7 +21,8 @@ import { UserService } from "./shared/user.service";
         })
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        LoginComponent
     ],
     providers: [
         UserService

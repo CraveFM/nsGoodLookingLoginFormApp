@@ -1,7 +1,10 @@
 <ActionBar>
-    <Label text="Home"></Label>
+    <Label text="APP"></Label>
 </ActionBar>
 
 <GridLayout>
-    <!-- Add your page content here -->
+    <StackLayout>
+        <Label class="body m-20" [text]="message" textWrap="true"></Label>
+        <Button class="btn btn-primary" text="Log out" (tap)="logout()"></Button>
+    </StackLayout>
 </GridLayout>
