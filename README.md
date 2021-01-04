@@ -473,6 +473,22 @@ along with the appropriate `import`
 import { LoginComponent } from "./login/login.component";
 ```
 
+- [ ] Edit `app.module.ts` by adding the `LoginComponent` to the `declarations` property
+
+```typescript
+    declarations: [
+        AppComponent,
+        LoginComponent
+    ],
+```
+
+along with the appropriate `import`
+
+```typescript
+import { LoginComponent } from "./login/login.component";
+```
+
+
 ## :o: Customization
 
 :iphone: Android
