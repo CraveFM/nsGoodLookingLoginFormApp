@@ -6,7 +6,7 @@
 
 Example taken from [:bookmark:`nativescript.rocks`](https://plugins.nativescript.rocks/samples) and can be used as a template since it has already been converted to [NativeScript 7](https://nativescript.org/blog/nativescript-7-announcement)
 
-## :o: Create a project by using this template
+## :bulb: Create a project by using this template
 
 ```
 $ ns create nsGoodLookingLoginFormApp --template https://github.com/CraveFM/nsGoodLookingLoginFormApp.git
@@ -488,6 +488,43 @@ along with the appropriate `import`
 import { LoginComponent } from "./login/login.component";
 ```
 
+## :o: Home Component
+
+- [ ] Home Component Template
+
+* replace `<!-- Add your page content here -->` with
+
+```xml
+    <StackLayout>
+        <Label class="body m-20" [text]="message" textWrap="true"></Label>
+        <Button class="btn btn-primary" text="Log out" (tap)="logout()"></Button>
+    </StackLayout>
+```
+
+- [ ] Home Component Class
+
+* Instance Variable
+
+```typescript
+    message = "You have successfully authenticated. This is where you build your core application functionality.";
+```
+
+* Constructor
+
+```typescript
+    constructor(private userService: UserService, private routerExtensions: RouterExtensions) {
+        // Use the component constructor to inject providers.
+    }
+```
+
+* Other Methods
+
+```typescript
+    logout() {
+        this.userService.logout();
+        this.routerExtensions.navigate(["/login"], { clearHistory: true });
+    }
+```
 
 ## :o: Customization
 
