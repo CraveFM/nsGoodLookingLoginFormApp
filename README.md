@@ -405,7 +405,7 @@ $ find src -name "*.spec.ts" -exec rm {} \;
 ```xml
 <FlexboxLayout class="page">
     <StackLayout class="form">
-        <Image class="logo" src="~/images/logo.png"></Image>
+        <Image class="logo" src="~/assets/logo.png"></Image>
         <Label class="header" text="APP NAME"></Label>
 
         <PreviousNextView>
